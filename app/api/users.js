@@ -6,6 +6,12 @@ export const addUser = createClient({
     url: 'api/users'
 });
 
+export const updateTask = createClient({
+    actionTypePrefix: 'users:addUser',
+    requestType: 'PUT',
+    url: 'api/users'
+});
+
 export const getUsers = createClient({
     actionTypePrefix: 'users:getUser',
     requestType: 'GET',

@@ -1,10 +1,10 @@
 import { CHANGE_SELECTED_USER } from 'app/actions/UsersActionTypes';
 
-export function changeSelectedUser(email) {
+export function changeSelectedUser(id) {
     return {
         type: CHANGE_SELECTED_USER,
         payload: {
-            email
+            id
         }
     };
 }

@@ -13,12 +13,12 @@ export default function usersReducer(state = defaultState, { type, payload }) {
         case removeUser.SUCCESS:
             return {
                 ...state,
-                list: payload.users
+                list: payload.tasks
             };
         case CHANGE_SELECTED_USER:
             return {
                 ...state,
-                selectedUser: payload.email
+                selectedUser: payload.id
             };
         default:
             return state;

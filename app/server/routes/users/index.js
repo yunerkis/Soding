@@ -1,32 +1,56 @@
 import express from 'express';
-import { sendUsers } from 'app/server/routes/users/utils';
-import { User } from 'app/server/db/user-schema';
+import { sendTask } from 'app/server/routes/users/utils';
+import { Task } from 'app/server/db/user-schema';
 
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    sendUsers(res);
+    sendTask(res);
 });
 
 router.post('/', (req, res) => {
-    const { email, name } = req.body;
+    const { 
+        name,
+        description,
+        dateCreated,
+        dateUpdate
+    } = req.body;
 
-    const user = new User({
-        email,
-        name
+    const task = new Task({
+        name,
+        description,
+        dateCreated,
+        dateUpdate
     });
 
-    user.save((err, result) => {
-        sendUsers(res);
+    task.save((err) => {
+        sendTask(res);
     });
 });
 
 router.delete('/', (req, res) => {
-    const email = req.body.email;
+    const _id = req.body._id;
 
-    User.remove({ email }, err => {
-        sendUsers(res);
+    Task.remove({ _id }, err => {
+        sendTask(res);
     });
+});
+
+router.put('/', (req, res) => {
+    const {_id, description, name, dateUpdate } = req.body;
+
+    Task.findByIdAndUpdate( _id,
+        {
+            $set:{
+                description,
+                name,
+                dateUpdate
+            }
+        },
+        (err) =>{
+            sendTask(res);
+        }
+    );
 });
 
 export default router;

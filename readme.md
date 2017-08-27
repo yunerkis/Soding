@@ -1,6 +1,7 @@
 #react-redux-fullstack-starter
 
 SODING TEST
+
 Here's how you get started:
 
 Rapid test on full-stack javascript development with MongoDB, ReactJS and Redux, using boilerplay = https://github.com/michaelcheng429/react-redux-fullstack-starter

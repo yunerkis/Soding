@@ -34,7 +34,8 @@
 
 .users {
     margin: 0 auto;
-    width: 600px;
+    width: 900px;
+    border: 1px solid black;
 
     &__form {
         text-align: center;
@@ -50,3 +51,4 @@
         }
     }
 }
+

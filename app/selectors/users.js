@@ -7,7 +7,7 @@ export const selectedUserSelector = createSelector(
     users => users.selectedUser
 );
 
-export const usersListSelector = createSelector(
+export const taskListSelector = createSelector(
     usersSelector,
     users => users.list
 );

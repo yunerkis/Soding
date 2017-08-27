@@ -1,24 +1,20 @@
 import React, { createClass } from 'react';
-import Users from 'app/components/users';
+import Tasks from 'app/components/tasks';
 
 const Home = createClass({
     displayName: 'Home',
     
     render() {
-        const { onClickUser, selectedUser, usersList } = this.props;
+        const { onClickUser, selectedUser, taskList } = this.props;
 
         return (
             <div>
                 <div className="home__banner">
                     <div className="home__logo-image" />
-                    <h1 className="home__banner-heading">App Name</h1>
-                    <div className="home__tagline">Tagline</div>
+                    <h1 className="home__banner-heading">CRUD</h1>
+                    <div className="home__tagline">This is a Test</div>
                 </div>
-                <Users
-                    onClickUser={onClickUser}
-                    selectedUser={selectedUser}
-                    usersList={usersList}
-                />
+                <Tasks/>
             </div>
         );
     }

@@ -15,7 +15,7 @@ const UsersAdd = createClass({
             name: ""
         }
     },
-    componentWillReceivePropr(nextProps){
+    componentWillReceiveProps(nextProps){
         if (nextProps.selectedUser) {
             this.setState({
                 description: nextProps.selectedUser.description,
@@ -47,11 +47,11 @@ const UsersAdd = createClass({
         this.setState({description: "", name:""})
     },
 
-    onChangeDescription(){
+    onChangeDescription(event){
         this.setState({description: event.target.value})
     },
 
-    onChangeName(){
+    onChangeName(event){
         this.setState({name: event.target.value})
     },
 
@@ -71,7 +71,7 @@ const UsersAdd = createClass({
                     placeholder="description" 
                     value={this.state.description}
                     ref={descriptionInput => this.descriptionInput = descriptionInput} />
-                <button>{this.props.selectedUser ? "update user" : "Add User"}</button>
+                <button>{this.props.selectedUser ? "update task" : "Add task"}</button>
             </form>
         );
     }

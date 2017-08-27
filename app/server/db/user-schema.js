@@ -1,6 +1,8 @@
 import mongoose from 'mongoose';
 
-export const User = mongoose.model('User', {
-    email: String,
-    name: String
+export const Task = mongoose.model('Task', {
+    name: String,
+    description: String,
+    dateCreated: Date,
+    dateUpdate: Date
 });

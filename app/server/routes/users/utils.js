@@ -1,7 +1,7 @@
-import { User } from 'app/server/db/user-schema';
+import { Task } from 'app/server/db/user-schema';
 
-export function sendUsers(res) {
-    User.find((err, results) => {
-        res.send({ users: results });
+export function sendTask(res) {
+    Task.find((err, results) => {
+        res.send({ tasks: results });
     });
 }
